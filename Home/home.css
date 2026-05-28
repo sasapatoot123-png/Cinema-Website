@@ -1,0 +1,181 @@
+:root {
+    --primary: #e50914;
+    --bg-dark: #0a0a0a;
+    --text-light: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: #000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #e50914;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    /* تغيير المحاذاة لتبدأ من الأعلى بدل المنتصف */
+    align-items: flex-start; 
+    /* إضافة مسافة علوية لتحريك الكلام لأسفل (تحكم في الرقم كما تحب) */
+    padding-top: 25vh; 
+    padding-left: 5%;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-background iframe {
+    width: 100vw;
+    height: 56.25vw; /* نسبة 16:9 لضمان تغطية العرض */
+    min-height: 100vh;
+    min-width: 177.77vh; /* لضمان تغطية الارتفاع */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.3); /* تكبير بنسبة 30% لإخفاء الأزرار خارج الشاشة */
+    pointer-events: none; /* يمنع ظهور أي أزرار عند تمرير الماوس */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* تعتيم الخلفية ليظهر النص بوضوح */
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    /* يمكنك أيضاً التحكم في المسافة بين العناصر هنا */
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin: 10px 0;
+}
+.hero-content a .trending-badge {
+    color: #ffffff; 
+    text-decoration: none; 
+}
+
+.hero-content a:visited .trending-badge {
+    color: #ffffff;
+}
+
+.hero-content a .trending-badge:hover {
+    color: #f0f0f0; 
+    opacity: 0.9;
+}
+
+.trending-badge {
+    display: inline-block;
+    background: var(--primary);
+    color: white !important; /* لضمان عدم تغير اللون للبنفسجي */
+    padding: 5px 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    width: 80%;
+    max-width: 700px;
+}
+
+.modal iframe {
+    width: 100%;
+    height: 400px;
+}
+.main-footer { background: #050505; border-top: 1px solid #222; padding-top: 60px; }
+.footer-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 5%; }
+.footer-col { flex: 1; min-width: 250px; margin-bottom: 40px; }
+.footer-col h4 { color: var(--primary); margin-bottom: 20px; text-transform: uppercase; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a { color: var(--text-muted); text-decoration: none; transition: 0.3s; }
+.footer-col ul li a:hover { color: white; padding-left: 5px; }
+.social-links { display: flex; gap: 15px; margin-top: 15px; }
+.social-icon { width: 35px; height: 35px; background: #222; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; text-decoration: none; }
+.newsletter-form { display: flex; margin-top: 15px; }
+.newsletter-form input { background: #1a1a1a; border: 1px solid #333; padding: 10px; color: white; flex: 1; border-radius: 4px 0 0 4px; }
+.btn-subscribe { background: var(--primary); color: white; border: none; padding: 0 15px; cursor: pointer; border-radius: 0 4px 4px 0; }
+.footer-bottom { background: #000; padding: 20px 0; border-top: 1px solid #111; margin-top: 30px; text-align: center; }
+.close {
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
